@@ -1,0 +1,15 @@
+identidock: 
+  build: "."
+  environment:
+    ENV: DEV
+  links:
+    - dnmonster
+    - redis
+  ports:
+    - "5000:5000"
+  volumes:
+    - "./app:/app"
+dnmonster:  
+  image: "amouat/dnmonster:1.0"
+redis:
+  image: "redis:3.0"
